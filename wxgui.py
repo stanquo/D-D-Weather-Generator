@@ -4,8 +4,8 @@ import wx,os
 class GUIManager(wx.Frame):
     def __init__(self, parent, title):
         self.locale = wx.Locale(wx.LANGUAGE_ENGLISH)
-        self.dirname=''
 
+        self.output="Placeholder"
         path=os.getcwd()
                 
         wx.Frame.__init__(self, parent, title=title, size=(240, 250), style=wx.DEFAULT_FRAME_STYLE ^ wx.RESIZE_BORDER ^ wx.MAXIMIZE_BOX)
@@ -46,8 +46,8 @@ class GUIManager(wx.Frame):
 
         #Bottom Panel
         
-        wx.Button(bottom_panel, 2, 'Generate', (0,0))
-        self.Bind(wx.EVT_BUTTON, self.OnGen, id=0)
+        wx.Button(bottom_panel, 1, 'Generate', (0,0))
+        self.Bind(wx.EVT_BUTTON, self.OnGen, id=1)
 
         #Layout sizers
         self.SetSize(selfsize)
@@ -57,7 +57,12 @@ class GUIManager(wx.Frame):
 
 
     def OnGen(self,e):
-        pass
+        print "test"
+        #self.result.SetLabel(self.fact1.GetValue())
+        dlg = wx.MessageDialog(self, "Weather in "+self.fact1.GetValue()+" is "+self.output, 'Result',wx.OK)
+        dlg.ShowModal()
+        dlg.Destroy()
+        
 
 
     def OnExit(self,e):
