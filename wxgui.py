@@ -39,20 +39,26 @@ class GUIManager(wx.Frame):
 
         #Top Panel
         self.dirtitle = wx.StaticText(top_panel, label="Factor 1:",pos=(5, 3))
-        self.editname = wx.TextCtrl(top_panel, size=(260, 24),pos=(0, 24))
+        self.fact1 = wx.TextCtrl(top_panel, size=(260, 24),pos=(0, 24))
 
         self.dirtitle = wx.StaticText(top_panel, label="Factor 2:",pos=(5, 49))
-        self.editname = wx.TextCtrl(top_panel, size=(260, 24),pos=(0, 70))
+        self.fact2 = wx.TextCtrl(top_panel, size=(260, 24),pos=(0, 70))
 
         #Bottom Panel
         
         wx.Button(bottom_panel, 2, 'Generate', (0,0))
+        self.Bind(wx.EVT_BUTTON, self.OnGen, id=0)
 
         #Layout sizers
         self.SetSize(selfsize)
         self.SetSizer(box)
 
         self.Show()
+
+
+    def OnGen(self,e):
+        pass
+
 
     def OnExit(self,e):
         self.Destroy()
@@ -68,12 +74,9 @@ class GUIManager(wx.Frame):
 
     def OnAbout(self,e):
         # Create a message dialog box
-        dlg = wx.MessageDialog(self, "Version 1.37, Limited release 11-2-16 for testing purposes only.", "LIAM"+u"\u2122"+" Windows GUI Version 1.3", wx.OK)
-        self.update_status(e,'About',0)
+        dlg = wx.MessageDialog(self, "Weather Generator Unreleased Version", 'About',wx.OK)
         dlg.ShowModal()
         dlg.Destroy()
-        self.update_status(e,'',1)
-        
 
 
 # Next, create an application object.
