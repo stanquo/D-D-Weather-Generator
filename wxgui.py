@@ -18,19 +18,19 @@ class GUIManager(wx.Frame):
         helpmenu= wx.Menu()
         menuAbout= filemenu.Append(wx.ID_ABOUT, "&About"," Information about this program")
         menuExit = filemenu.Append(wx.ID_EXIT,"E&xit"," Terminate the program")
-
         helpmenuhelp=helpmenu.Append(wx.ID_OPEN, "&Help"," Open Help File")
+        
         # Creating the menubar.
         menuBar = wx.MenuBar()
-        menuBar.Append(filemenu,"&File") # Adding the "filemenu" to the MenuBar
+        menuBar.Append(filemenu,"&File")
         menuBar.Append(helpmenu,"&Help")
-        self.SetMenuBar(menuBar)  # Adding the MenuBar to the Frame content.
+        self.SetMenuBar(menuBar)
 
         # Events
         self.Bind(wx.EVT_MENU, self.OnExit, menuExit)
         self.Bind(wx.EVT_CLOSE, self.OnExit)
         self.Bind(wx.EVT_MENU, self.OnAbout, menuAbout)
-        self.Bind(wx.EVT_MENU, self.on_help, helpmenuhelp)
+        self.Bind(wx.EVT_MENU, self.OnHelp, helpmenuhelp)
         
         bottom_panel=wx.Panel(self, -1)
         
@@ -62,24 +62,16 @@ class GUIManager(wx.Frame):
         dlg = wx.MessageDialog(self, "Weather in "+self.fact1.GetValue()+" is "+self.output, 'Result',wx.OK)
         dlg.ShowModal()
         dlg.Destroy()
-        
-
 
     def OnExit(self,e):
         self.Destroy()
-        try:
-            l2.server_sock.close()
-            self.update_status(e,'Service Stopped',0)
-        except:
-            print "Attempted to Cleanup BT when not active"
 
-
-    def on_help(self,e):
+    def OnHelp(self,e):
         print 'help'
 
     def OnAbout(self,e):
         # Create a message dialog box
-        dlg = wx.MessageDialog(self, "Weather Generator Unreleased Version", 'About',wx.OK)
+        dlg = wx.MessageDialog(self, "Weather Generator: Version - Unreleased", 'About',wx.OK)
         dlg.ShowModal()
         dlg.Destroy()
 
