@@ -1,0 +1,3 @@
+What pieces of information are being entered by the operator? (With example input)
+
+How should the output be formatted? (With example optimal output)
