@@ -1,0 +1,12 @@
+*season					
+Spring	"15,20-30"	"55,30-40"	"90,40-50"	"100,51-57"	
+Summer	"35,40-48"	"80,48-55"	"100,55-60"		
+Fall	"28,10-20"	"68,20-30"	"90,30-45"	"100,45-55"	
+Winter	"25,+10-0"	"75,0-15"	"90,16-25"	"100,25-35"	
+*condition					
+Cloudy	"45,Partly Cloudy"	"75,Overcast"	"100,Darkly Overcast"		
+Wind	"30,Light Breeze"	"60,Lightly Windy"	"85,Very Windy"	"100,Incredibly Windy"	
+Rain	"20,Scattered Showers"	"50, Constant Drizzle"	"80, Rainy"	"100, Heavy Rain"	
+Thunderstorm	"25, Light Thunder"	"53,Heavy Thunder"	"75,Lightning and Thunder"	"90, Heavy Thunder and Hail"	"100, Thunder Lightning and Hail"
+Fog	"55, Light Mist"	"88, Moderate Fog"	"100,Thick Blinding Fog"		
+Snow	"36,Light Snow"	"68, Heavy Snow"	"86,Heavy Snow with Significant Accumulation"	"95,Blizzard"	"100,Blizzard with Abnormal Accumulation"
