@@ -1,3 +1,30 @@
 What pieces of information are being entered by the operator? (With example input)
 
+Dropdown menus are the ideal way of inputting information, with only 2 dropdown menus being needed: Country and Season
+It would be ideal if choosing the country would filter out unusable seasons.
+Athena has no desire to type anything in using the keyboard.
+
+i.e. Country: Danechka  Season: Spring
+i.e. Country: Iacopo  Season: Dry
+
+
 How should the output be formatted? (With example optimal output)
+
+Text output only
+Nothing needs to be saved
+Use the format of the examples below
+
+i.e.	Sunny
+	Partly Cloudy
+	Incredibly Windy
+	30 - 40 degrees
+
+# degrees can either be typed out or use the degree symbol
+# input for this would've been: Country: Danechka, Season: Spring
+
+i.e.	Heavy Snow
+	Moderate Fog
+	-5 - 5 degrees
+
+# input for this would've been: Country: Danechka, Season: Winter
+# it is not necessary to display any output for any weather add-on that is not used; in the above example, no wind was rolled randomly, so it was omitted from the output
